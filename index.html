@@ -10,14 +10,19 @@
 <body>
   <main>
     
+    <p>Search / filters</p>
+    <input type="search" v-model="find_word">
+    <ol>
+      <li v-for="(fruta, index) in filterFrutas">
+        {{fruta.name | uppercase}}
+      </li>
+    </ol>
+    <hr>
     <p>Computed</p>
+    <h3>{{ concatenate }}</h3>
     <ol>
       <li v-for="(pelicula, index) in orderBy"> {{pelicula}}</li>
     </ol>
-    <!--
-      <button v-on:click="addMovie()">add movie</button>
-      <button @click="deleteMovie()">delete movie</button>
-    -->
     <hr>
     <p>Metodos</p>
     <ol>

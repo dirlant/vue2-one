@@ -1,3 +1,4 @@
+Vue.filter('uppercase', (value) => value.toUpperCase());
 new Vue ({
   el: 'main',
   data: {
@@ -9,9 +10,13 @@ new Vue ({
       {name: 'pera', size: '10', price: 99 },
       {name: 'manzana', size: '15', price: 999 },
       {name: 'cambur', size: '34', price: 88 },
+      {name: 'sandia', size: '34', price: 88 },
+      {name: 'melon', size: '34', price: 88 },
     ],
     superfruta : {name: 'mandarina', size: '34', price: 88 },
-    new_movie: null,    
+    new_movie: null,
+    find_word: null,
+       
   },
   methods:{
     addMovie(){
@@ -28,6 +33,11 @@ new Vue ({
     },
     orderBy(){
       return this.peliculas.sort();
+    },
+    filterFrutas(){      
+      return this.frutas.filter((fruta) => {
+        return fruta.name.includes(this.find_word);
+      });
     }
   }
 });
