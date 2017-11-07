@@ -9,14 +9,23 @@
 </head>
 <body>
   <main>
+      
+    <ol>
+      <li v-for="pelicula in peliculas">{{ pelicula }}</li>
+    </ol>
+    <hr>
+    
     <h1>{{ texto }}</h1>
     <h3 v-text="texto"></h3>
     <hr>
+    
     <input type="text" v-model="nombre">
     <p> {{ nombre }} </p>
     <hr>
+    
     <pre> {{ $data }} </pre>
     <hr>
+
     <input type="text" v-model="nota">
     <p v-if="nota >= 9 && nota <= 20"> muy buena calificación: {{nota}} </p>
     <p v-else-if="nota >= 20"> excelente calificación: {{nota}} </p>
