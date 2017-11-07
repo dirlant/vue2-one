@@ -30,9 +30,24 @@ Vue.component('articulos',{
 });
 
 Vue.component('frutas',{
+  props: ['objeto'],
   template :`
-    <h3>Componente de frutas</h3>
+    <div class="master-frutas">  
+      <h3>Componente de frutas</h3>
+      <p>{{objeto.name}}</p>
+    </div>
   `,
+  mounted(){
+    console.log(this.objeto);
+  }
+
+});
+
+Vue.component('inline',{
+  props: ['objeto_nuevo'],
+  mounted(){
+    console.log(this.objeto_nuevo);
+  }
 
 });
 

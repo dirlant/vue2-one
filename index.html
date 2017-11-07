@@ -14,10 +14,16 @@
 <body>
   
   <main>
-    <frutas></frutas>
+    <inline :objeto_nuevo="superfruta" inline-template>
+      <div class="master-frutas">  
+        <h3>Componente en linea de frutas</h3>
+        <p>{{objeto_nuevo.name}}</p>
+      </div>
+    </inline>
     <hr>
-    <articulos></articulos>
-    <articulos></articulos>
+    <frutas :objeto="superfruta"></frutas>
+    <hr>
+    <articulos></articulos>    
     <hr>
     <p>Listado por ajax</p>
     <ol>
