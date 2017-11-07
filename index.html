@@ -14,6 +14,14 @@
 <body>
 
   <main>
+    <p>Listado por ajax</p>
+    <ol>
+      <li v-for="(post, index) in posts">
+        {{ post.userId }} - {{ post.title}}
+      </li>
+    </ol>    
+    <hr>
+
     <p>Evento bind / asincrono</p>
     <ol>
       <li v-on:click="selection(index)" v-bind:class="{like: index == cursor}" v-for="(pelicula, index) in orderBy"> {{pelicula}}</li>
@@ -103,6 +111,7 @@
   <hr>
     
   <script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

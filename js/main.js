@@ -1,10 +1,25 @@
 Vue.filter('uppercase', (value) => value.toUpperCase());
 new Vue ({
   el: 'main',
+  mounted(){
+
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then((response) => {
+        
+          this.posts = response.data;
+        
+        
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+  },
   data: {
     texto : 'hola mundo',
     nombre: 'Diego Carciente',
     nota: 9,
+    posts: null,
     peliculas: ['pelicula 1', 'pelicula 2', 'pelicula 3'],
     frutas: [
       {name: 'pera', size: '10', price: 99 },
@@ -16,8 +31,7 @@ new Vue ({
     superfruta : {name: 'mandarina', size: '34', price: 88 },
     new_movie: null,
     find_word: null,
-    cursor: null,
-       
+    cursor: null,       
   },
   methods:{
     addMovie(){
