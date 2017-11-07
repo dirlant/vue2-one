@@ -32,7 +32,7 @@ Vue.component('articulos',{
 Vue.component('frutas',{
   props: ['objeto'],
   template :`
-    <div class="master-frutas">  
+    <div>  
       <h3>Componente de frutas</h3>
       <p>{{objeto.name}}</p>
     </div>
@@ -49,6 +49,33 @@ Vue.component('inline',{
     console.log(this.objeto_nuevo);
   }
 
+});
+
+Vue.component('padre',{
+  template: `
+  <div>
+    <h4>{{ titulo }}</h4>
+    <hijo></hijo>
+  </div>
+  `,
+  data(){
+    return {
+      titulo: 'componente padre'
+    }
+  }
+});
+
+Vue.component('hijo',{
+  template: `
+    <div>
+      <p style="background: yellow;">{{ titulo }}</p>
+    </div>
+  `,
+  data(){
+    return {
+      titulo: 'componente hijo'
+    }
+  }
 });
 
 Vue.filter('uppercase', (value) => value.toUpperCase());
