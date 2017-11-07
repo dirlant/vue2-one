@@ -98,6 +98,7 @@ new Vue ({
     nombre: 'Diego Carciente',
     nota: 9,
     posts: null,
+    select_component: 'hijo',
     peliculas: ['pelicula 1', 'pelicula 2', 'pelicula 3'],
     frutas: [
       {name: 'pera', size: '10', price: 99 },
@@ -121,6 +122,9 @@ new Vue ({
     },
     selection(index){
       this.cursor = index;
+    },
+    changeComponent(component){
+      this.select_component = component;
     }
   },
   computed: {
