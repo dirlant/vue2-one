@@ -1,14 +1,50 @@
+Vue.component('articulos',{
+  template :`
+    
+    <div class="master-articulos">
+      <h3>Componente -> {{ titulo }} </h3>
+      <p>Listado por ajax</p>
+      <ol>
+        <li v-for="(post, index) in posts" v-if="index <= 9">
+          {{ post.userId }} - {{ post.title}}
+        </li>
+      </ol>
+    </div>
+  `,
+  mounted(){    
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then((response) => {        
+        this.posts = response.data;              
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+  data(){
+    return {
+      titulo: 'articulos',
+      posts:  null,
+    }
+  }
+
+});
+
+Vue.component('frutas',{
+  template :`
+    <h3>Componente de frutas</h3>
+  `,
+
+});
+
 Vue.filter('uppercase', (value) => value.toUpperCase());
+
 new Vue ({
   el: 'main',
   mounted(){
 
     axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then((response) => {
-        
-          this.posts = response.data;
-        
-        
+      .then((response) => {        
+        this.posts = response.data;              
       })
       .catch((error) => {
         console.log(error);
