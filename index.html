@@ -10,9 +10,11 @@
 <body>
   <main>
       
-    <ol>
-      <li v-for="pelicula in peliculas">{{ pelicula }}</li>
-    </ol>
+    <ul>
+      <li v-for="(fruta, index) in frutas">
+        {{ index }} - {{ fruta.name }} - {{ fruta.size }} - {{ fruta.price }}
+      </li>
+    </ul>
     <hr>
     
     <p>bucle for</p>
