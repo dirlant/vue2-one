@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-
+  <style>
+    .like{
+      border-bottom:  3px solid #292727;
+    }
+  </style>
 </head>
 <body>
-  <p>Instancias</p>
-  <div id="vue2">
-    <p>{{ texto }}</p>
-  </div>
-  <div id="vue3">
-    <p>{{ texto }}</p>
-  </div>
-  <hr>
+
   <main>
+    <p>Evento bind / asincrono</p>
+    <ol>
+      <li v-on:click="selection(index)" v-bind:class="{like: index == cursor}" v-for="(pelicula, index) in orderBy"> {{pelicula}}</li>
+    </ol>
+    <hr>
+
     <p>Search / filters</p>
     <input type="search" v-model="find_word">
     <ol>
@@ -25,17 +28,19 @@
       </li>
     </ol>
     <hr>
+
     <p>Computed</p>
     <h3>{{ concatenate }}</h3>
     <ol>
       <li v-for="(pelicula, index) in orderBy"> {{pelicula}}</li>
     </ol>
     <hr>
+
     <p>Metodos</p>
     <ol>
       <li v-for="(pelicula, index) in peliculas">{{ pelicula }} - <button @click="deleteMovie(index)">delete movie</button></li>
     </ol>
-    <form @submit.prevent="addMovie()">
+    <form v-on:submit.prevent="addMovie()">
       <input type="text" v-model="new_movie">
       <input type="submit" value="Add Movie">
     </form>
@@ -86,10 +91,16 @@
 
     <p>imprimit arreglo</p>
     <pre> {{ $data }} </pre>
-
-
-
   </main>
+
+  <p>Instancias</p>
+  <div id="vue2">
+    <p>{{ texto }}</p>
+  </div>
+  <div id="vue3">
+    <p>{{ texto }}</p>
+  </div>
+  <hr>
     
   <script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
   <script src="js/main.js"></script>

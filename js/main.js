@@ -16,6 +16,7 @@ new Vue ({
     superfruta : {name: 'mandarina', size: '34', price: 88 },
     new_movie: null,
     find_word: null,
+    cursor: null,
        
   },
   methods:{
@@ -25,6 +26,9 @@ new Vue ({
     },
     deleteMovie(index){
       this.peliculas.splice(index, 1)
+    },
+    selection(index){
+      this.cursor = index;
     }
   },
   computed: {
