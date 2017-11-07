@@ -10,6 +10,20 @@
 <body>
   <main>
     
+    <p>Metodos</p>
+    <ol>
+      <li v-for="(pelicula, index) in peliculas">{{ pelicula }} - <button @click="deleteMovie(index)">delete movie</button></li>
+    </ol>
+    <form @submit.prevent="addMovie()">
+      <input type="text" v-model="newMovie">
+      <input type="submit" value="Add Movie">
+    </form>
+    <!--
+      <button v-on:click="addMovie()">add movie</button>
+      <button @click="deleteMovie()">delete movie</button>
+    -->
+    <hr>
+    
     <p>Objeto</p>
     <ul>
       <li v-for="(value, key, index) in superfruta">
