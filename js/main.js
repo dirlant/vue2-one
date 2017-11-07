@@ -11,15 +11,23 @@ new Vue ({
       {name: 'cambur', size: '34', price: 88 },
     ],
     superfruta : {name: 'mandarina', size: '34', price: 88 },
-    newMovie: null,    
+    new_movie: null,    
   },
   methods:{
     addMovie(){
-      this.peliculas.unshift(this.newMovie);
-      this.newMovie = null;
+      this.peliculas.unshift(this.new_movie);
+      this.new_movie = null;
     },
     deleteMovie(index){
       this.peliculas.splice(index, 1)
+    }
+  },
+  computed: {
+    concatenate(){
+      return this.texto + '->' + this.nombre;
+    },
+    orderBy(){
+      return this.peliculas.sort();
     }
   }
 });

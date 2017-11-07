@@ -10,12 +10,21 @@
 <body>
   <main>
     
+    <p>Computed</p>
+    <ol>
+      <li v-for="(pelicula, index) in orderBy"> {{pelicula}}</li>
+    </ol>
+    <!--
+      <button v-on:click="addMovie()">add movie</button>
+      <button @click="deleteMovie()">delete movie</button>
+    -->
+    <hr>
     <p>Metodos</p>
     <ol>
       <li v-for="(pelicula, index) in peliculas">{{ pelicula }} - <button @click="deleteMovie(index)">delete movie</button></li>
     </ol>
     <form @submit.prevent="addMovie()">
-      <input type="text" v-model="newMovie">
+      <input type="text" v-model="new_movie">
       <input type="submit" value="Add Movie">
     </form>
     <!--
