@@ -41,3 +41,17 @@ new Vue ({
     }
   }
 });
+
+const Vue2 = new Vue({
+  el: '#vue2',
+  data: {
+    texto : 'hola mundo 2',       
+  },
+}) 
+
+const Vue3 = new Vue({
+  el: '#vue3',
+  data: {
+    texto : 'hola mundo 3',       
+  },
+}) 
