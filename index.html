@@ -10,6 +10,14 @@
 <body>
   <main>
     
+    <p>Objeto</p>
+    <ul>
+      <li v-for="(value, key, index) in superfruta">
+        {{ index }} : {{ key }} -> {{ value }}
+      </li>
+    </ul>
+    <hr>
+    
     <p>Array de objeto</p>
     <ul>
       <li v-for="(fruta, index) in frutas">

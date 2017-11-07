@@ -9,6 +9,7 @@ new Vue ({
       {name: 'pera', size: '10', price: 99 },
       {name: 'manzana', size: '15', price: 999 },
       {name: 'cambur', size: '34', price: 88 },
-    ]
+    ],
+    superfruta : {name: 'mandarina', size: '34', price: 88 },
   }
 });
